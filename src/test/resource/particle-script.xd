@@ -1,0 +1,3 @@
+stream create --definition "particle --particle.deviceId=3c0023000a47353138383138 --particle.accessToken=459b6cd6b7d6c32fa728ec9ceaf941bfdfcfb5f1 --particle.eventName=temperature | log" --name cf-iot --deploy
+
+stream create cf-iot-temp --definition ":cf-iot.particle > filter --expression=#jsonPath(payload,'$.data') | log" --deploy
