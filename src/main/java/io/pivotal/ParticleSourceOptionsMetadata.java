@@ -5,9 +5,25 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties("particle")
 public class ParticleSourceOptionsMetadata {
 
-	private String baseUrl;
+	/**
+	 * Particle Cloud API URL
+	 */
+	// "https://api.spark.io/v1/devices/";
+	private String baseUrl = "https://api.spark.io/v1/devices/";
+
+	/**
+	 * deviceId sending events
+	 */
 	private String deviceId;
+	
+	/**
+	 * accessToken for the account that owns the device
+	 */
 	private String accessToken;
+
+	/**
+	 * eventName or regex 
+	 */
 	private String eventName = ".*"; // default to all events
 	
 	
@@ -17,12 +33,14 @@ public class ParticleSourceOptionsMetadata {
 	public void setBaseUrl(String baseUrl) {
 		this.baseUrl = baseUrl;
 	}
+	
 	public String getDeviceId() {
 		return deviceId;
 	}
 	public void setDeviceId(String deviceId) {
 		this.deviceId = deviceId;
 	}
+	
 	public String getAccessToken() {
 		return accessToken;
 	}
@@ -43,7 +61,6 @@ public class ParticleSourceOptionsMetadata {
 		return "ParticleSourceOptionsMetadata [baseUrl=" + baseUrl + ", deviceId=" + deviceId + ", accessToken="
 				+ accessToken + ", eventName=" + eventName + "]";
 	}
-	
 	
 
 }
