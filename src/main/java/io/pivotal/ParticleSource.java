@@ -95,7 +95,12 @@ public class ParticleSource {
 	////////////////////////////////////////////
 
 	private String getEventSourceUrl() {
-		return options.getBaseUrl() + options.getDeviceId() + "/events?access_token=" + options.getAccessToken();
+		
+		String deviceId = options.getDeviceId() != null ? options.getDeviceId() + "/" : "";
+		String url = options.getBaseUrl() + deviceId + "events?access_token=" + options.getAccessToken();
+		logger.info("eventSourceUrl: {}", url);
+		return url;
+		
 	}
 
 }

@@ -12,7 +12,7 @@ public class ParticleSourceOptionsMetadata {
 	private String baseUrl = "https://api.spark.io/v1/devices/";
 
 	/**
-	 * deviceId sending events
+	 * deviceId sending events - all devices if not specified
 	 */
 	private String deviceId;
 	
